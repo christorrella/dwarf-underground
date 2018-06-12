@@ -23,7 +23,7 @@ class CommentSection extends Component {
 
     render() {
         return (
-            <div id = "CommentArea">
+            <div id = "CommentArea" hidden = 'true'>
                 <form>
                     <br />
                     <input type="text" id="theComment"/>
