@@ -23,11 +23,11 @@ class CommentSection extends Component {
 
     render() {
         return (
-            <div>
+            <div id = "CommentArea">
                 <form>
                     <br />
                     <input type="text" id="theComment"/>
-                    <button onClick={(event) => this.addComment(event, document.getElementById('theComment').value)} action >Submit Comment</button>
+                    <input value = "Submit Comment "type = 'button' onClick={(event) => this.addComment(event, document.getElementById('theComment').value)} />
                 </form>
                 <ul>
                     {this.state.comments.map(comments => <Comment comment={comments} />)}
