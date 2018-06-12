@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class Comment extends React.Component {
     render() {
-        return <li>{this.props.comment}</li>
+        return <li>Anonymous Hobbit: "{this.props.comment}"</li>
     }
 }
 
@@ -14,10 +14,10 @@ class CommentSection extends Component {
         }
     }
 
-    addComment(event) {
+    addComment(event, theComment) {
         event.preventDefault()
         const comments = [...this.state.comments]
-        comments.push('Kyle')
+        comments.push(theComment)
         this.setState({ comments })
     }
 
@@ -26,8 +26,8 @@ class CommentSection extends Component {
             <div>
                 <form>
                     <br />
-                    <input type="text" />
-                    <button onClick={(event) => this.addComment(event)} action >Submit Comment</button>
+                    <input type="text" id="theComment"/>
+                    <button onClick={(event) => this.addComment(event, document.getElementById('theComment').value)} action >Submit Comment</button>
                 </form>
                 <ul>
                     {this.state.comments.map(comments => <Comment comment={comments} />)}
